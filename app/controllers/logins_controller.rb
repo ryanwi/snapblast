@@ -5,6 +5,11 @@ class LoginsController < ApplicationController
   def index
   end
 
+  # GET /logins/new
+  # GET /logins/new.json
+  def new
+  end
+
   # POST /logins
   # POST /logins.json
   def create
@@ -20,7 +25,7 @@ class LoginsController < ApplicationController
         format.html { redirect_to '/', notice: 'User was successfully created.' }
         # format.json { render action: 'show', status: :created, location: @user }
       else
-        format.html { render action: 'index' }
+        format.html { render action: 'new' }
         # format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
