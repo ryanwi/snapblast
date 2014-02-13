@@ -46,7 +46,13 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'json'
+gem 'faraday'
+gem 'twilio-ruby'
+gem 'redis'
+gem 'resque'
 gem 'bootstrap-sass', '>= 3.0.0.0'
+
 group :test, :development do
   gem 'rspec-rails'
 end
