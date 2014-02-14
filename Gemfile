@@ -52,6 +52,7 @@ gem 'twilio-ruby'
 gem 'redis'
 gem 'resque'
 gem 'bootstrap-sass', '>= 3.0.0.0'
+gem 'figaro'
 
 group :test, :development do
   gem 'rspec-rails'
