@@ -1,0 +1,29 @@
+<h1>Listing teams</h1>
+
+<div class="alert alert-info">
+  <span class="glyphicon glyphicon-info-sign"></span>
+  Choose a team to notify.
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Season</th>
+      <th>League</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= link_to team["team"]["team_name"], team_path(team["team"]["id"]) %></td>
+        <td><%= team["team"]["team_season"] %></td>
+        <td><%= team["team"]["team_league"] %></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

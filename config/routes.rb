@@ -1,4 +1,5 @@
 Snapblast::Application.routes.draw do
+  resources :teams
   resources :users
   resource :logins
 

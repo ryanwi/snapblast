@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @team["team"]["team_name"] %></h1>
+
+<form>
+
+<h3><span class="label label-primary">1</span> Compose a message</h3>
+<label>Message</label>
+<textarea class="form-control" rows="4"></textarea>
+
+<h3><span class="label label-primary">2</span> Select where to send it</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Emails</th>
+      <th>Phone Numbers</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roster.each do |roster| %>
+      <tr>
+        <td><%= roster["roster"]["first"] %> <%= roster["roster"]["last"] %></td>
+        <td>
+            <% roster["roster"]["roster_email_addresses"].each do |email| %>
+                <%= email["label"] %>: <%= email["email"] %> <br>
+            <% end %>
+         </td>
+        <td>
+            <% roster["roster"]["roster_telephone_numbers"].each do |phone| %>
+                <%= phone["label"] %>: <%= phone["phone_number"] %> <br>
+            <% end %>
+         </td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<input type="submit" class="btn btn-primary btn-lg" value="Send Message">
+</form>
