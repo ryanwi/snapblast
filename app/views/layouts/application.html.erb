@@ -26,13 +26,22 @@
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/login">Login</a></li>
+        <li>
+          <% if user_signed_in? %>
+            <%= link_to 'Logout', '/logins', method: :delete %>
+          <% else %>
+            <a href="/login">Login</a>
+          <% end %>
+        </li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
 </div>
 
 <div class="container">
+
+  <%= render 'layouts/messages' %>
+
   <%= yield %>
 </div><!-- /.container -->
 

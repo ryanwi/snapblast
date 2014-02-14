@@ -1,17 +1,22 @@
 <h1>Login</h1>
 
+<div class="alert alert-warning">
+  <span class="label label-warning">Warning</span> This site is currently NOT
+  encrypting requests with SSL. If you are on an insecure network, don't use this.
+  Your information could be intercepted.
+</div>
 
 <%= form_tag({controller: "logins", action: "create"}, role: "form") do %>
 
   <div class="form-group">
-    <label for="login-email">Email address</label>
-    <input type="email" class="form-control" id="login-email" name="user" placeholder="Enter email">
+    <label for="login-email">TeamSnap Email address</label>
+    <input type="email" class="form-control" id="login-email" name="user" placeholder="Enter email" autofocus>
   </div>
   <div class="form-group">
-    <label for="login-password">Password</label>
+    <label for="login-password">TeamSnap Password</label>
     <input type="password" class="form-control" id="login-password" name="password" placeholder="Password">
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
 
 <% end %>
 

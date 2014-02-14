@@ -1,6 +1,6 @@
 Snapblast::Application.routes.draw do
   resources :users
-  resources :logins
+  resource :logins
 
   get '/about' => 'welcome#about'
   get '/contact' => 'welcome#contact'
