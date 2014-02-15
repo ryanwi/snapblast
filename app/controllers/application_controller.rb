@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
       redirect_to '/login'
     end
   end
+
+  def ssl_configured?
+    !Rails.env.development?
+  end
 end
