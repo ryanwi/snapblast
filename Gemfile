@@ -53,6 +53,7 @@ gem 'redis'
 gem 'resque'
 gem 'bootstrap-sass', '>= 3.0.0.0'
 gem 'figaro'
+gem 'rails_12factor', group: :production
 
 group :test, :development do
   gem 'rspec-rails'
