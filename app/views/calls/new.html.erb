@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Call <%= @team["team"]["team_name"] %></h1>
+
+<%= form_tag({controller: "calls", action: "create"}, role: "form") do %>
+
+  <input type="hidden" name="team_id" value="<%= params[:id] %>">
+
+  <div style="margin-bottom:30px;">
+    <h4><span class="label label-primary">1</span> Compose a message</h4>
+    <textarea class="form-control" rows="4" placeholder="Practice is canceled...">
+    </textarea>
+  </div>
+
+  <h4>
+    <span class="label label-primary">2</span> Message will be converted to voice
+    and sent to the following phone numbers.
+  </h4>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone Numbers</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @roster.each do |roster| %>
+        <tr>
+          <td><%= roster["roster"]["first"] %> <%= roster["roster"]["last"] %></td>
+          <td>
+              <% roster["roster"]["roster_telephone_numbers"].each do |phone| %>
+                  <%= phone["label"] %>: <%= phone["phone_number"] %> <br>
+              <% end %>
+           </td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <input type="submit" class="btn btn-success btn-lg" value="Send Message">
+<% end %>
