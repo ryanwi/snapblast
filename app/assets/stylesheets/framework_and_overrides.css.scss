@@ -1,2 +1,25 @@
 // import the CSS framework
+// https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_variables.scss
+/*
+$text-color: red;
+$navbar-default-bg: #312312;
+$light-orange: #ff8c00;
+$navbar-default-color: $light-orange;
+$navbar-default-bg: red;
+$body-bg: #;
+$jumbotron-bg: #3598DB;
+$light-orange: #ff8c00;
+$navbar-default-color: $light-orange;
+$navbar-default-bg: $light-orange;
+$jumbotron-color: #fff;
+$navbar-default-color: red;
+$navbar-height: 500px !default;
+*/
+
+$navbar-inverse-bg: #85144b;
+$navbar-inverse-link-color: white;
+$jumbotron-bg: #85144b;
+$jumbotron-color: #fff;
+
+
 @import "bootstrap";
