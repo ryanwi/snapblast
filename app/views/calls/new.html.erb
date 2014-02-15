@@ -4,12 +4,12 @@
 
 <%= form_tag({controller: "calls", action: "create"}, role: "form") do %>
 
-  <input type="hidden" name="team_id" value="<%= params[:id] %>">
+  <input type="hidden" name="team_id" value="<%= @team_id %>">
+  <input type="hidden" name="roster_id" value="<%= @roster_id %>">
 
   <div style="margin-bottom:30px;">
     <h4><span class="label label-primary">1</span> Compose a message</h4>
-    <textarea class="form-control" rows="4" placeholder="Practice is canceled...">
-    </textarea>
+    <textarea class="form-control" name="message" rows="4" placeholder="Practice is canceled..."></textarea>
   </div>
 
   <h4>
@@ -26,7 +26,7 @@
     </thead>
 
     <tbody>
-      <% @roster.each do |roster| %>
+      <% @team_rosters.each do |roster| %>
         <tr>
           <td><%= roster["roster"]["first"] %> <%= roster["roster"]["last"] %></td>
           <td>
@@ -40,5 +40,13 @@
     </tbody>
   </table>
 
-  <input type="submit" class="btn btn-success btn-lg" value="Send Message">
+  <input type="submit" id="loading-btn" class="btn btn-success btn-lg"
+    value="Send Message" data-loading-text="Loading...">
 <% end %>
+
+<script>
+  $('#loading-btn').click(function () {
+    var btn = $(this)
+    btn.button('loading')
+  });
+</script>
