@@ -44,13 +44,6 @@
     </tbody>
   </table>
 
-  <input type="submit" id="loading-btn" class="btn btn-success btn-lg"
+  <input type="submit" class="btn btn-success btn-lg btn-loading"
     value="Send Message" data-loading-text="Loading...">
 <% end %>
-
-<script>
-  $('#loading-btn').click(function () {
-    var btn = $(this)
-    btn.button('loading')
-  });
-</script>

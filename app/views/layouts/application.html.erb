@@ -46,9 +46,15 @@
 
   <%= render 'layouts/footer' %>
 
-
-
 </div><!-- /.container -->
+
+
+<script>
+  $('.btn-loading').click(function () {
+    var btn = $(this)
+    btn.button('loading')
+  });
+</script>
 
 </body>
 </html>
