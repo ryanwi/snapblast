@@ -12,17 +12,17 @@ messages, but not voice calls.
 SnapBlast allows a coach/manager to quickly call the entire team in one blast
 with a voice message.  For when you need to get word out in a hurry.
 
-Primarily a personal development project, but feel free to use.
+This is primarily a personal development project, but feel free to use.
 
 ## Features
 
 - Login with your TeamSnap credentials
 - Choose one of your teams to call
-- Write a message and send it, it will be converted to voice and all players will be a call.
+- Write a message and send it, it will be converted to voice and all players will be a call
 
 ## Built With
 
-SnapBlast is built usint these open source components:
+SnapBlast is built using these open source components:
 
 - [Ruby on Rails 4](https://github.com/rails/rails)
 - [TeamSnap API](https://api.teamsnap.com/v2/)
