@@ -28,8 +28,8 @@ SnapBlast is built usint these open source components:
 - [Bootstrap 3](http://getbootstrap.com/)
 - [RVM](http://rvm.io/)
 - [faraday](https://github.com/lostisland/faraday)
+- [RSpec](https://github.com/rspec/rspec)
 - [figaro](https://github.com/laserlemon/figaro)
-- [heroku](http://heroku.com)
 
 ## Development Setup
 
