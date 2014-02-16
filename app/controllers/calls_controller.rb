@@ -68,6 +68,7 @@ class CallsController < ApplicationController
       end
     end
 
+    flash[:events] = [ ['call'] ]
     redirect_to "/teams", notice: "Your calls have been made"
   end
 
