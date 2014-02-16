@@ -1,10 +1,8 @@
 Snapblast::Application.routes.draw do
   resources :teams
-  resources :users
+  resources :calls
   resource :logins
 
-  get '/about' => 'welcome#about'
-  get '/contact' => 'welcome#contact'
   get '/login' => 'logins#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
