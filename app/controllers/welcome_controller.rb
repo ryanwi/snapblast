@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
+
   def index
-    render layout: 'welcome'
+    render layout: 'landing'
   end
 
   def about
@@ -8,4 +9,5 @@ class WelcomeController < ApplicationController
 
   def contact
   end
+
 end
