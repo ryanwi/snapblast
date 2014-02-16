@@ -68,9 +68,3 @@ rails s
 - <http://www.ryan-williams.net>
 - <https://twitter.com/ryanwi>
 - <https://github.com/ryanwi>
-
-
-
-non-trial account/balance
-tests/rspec
-new relic/keeping site up
