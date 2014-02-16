@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: snapblast_development
   pool: 5
-  username: ryanandcassie
+  username: snapblast
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: snapblast_test
   pool: 5
-  username: ryanandcassie
+  username: snapblast
   password:
 
 production:
