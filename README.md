@@ -1,6 +1,8 @@
 # SnapBlast
 
-Instantly broadcast a phone message to your TeamSnap team.
+Instantly broadcast a phone message to your TeamSnap team. SnapBlast was created
+by <a href="http://www.ryan-williams.net">Ryan Williams</a>
+(<a href="https://twitter.com/ryanwi">@ryanwi</a>).
 
 ## Why?
 
@@ -59,4 +61,16 @@ rake secret
 rails s
 ```
 
+## Author
 
+**Ryan Williams**
+
+- <http://www.ryan-williams.net>
+- <https://twitter.com/ryanwi>
+- <https://github.com/ryanwi>
+
+
+
+non-trial account/balance
+tests/rspec
+new relic/keeping site up
