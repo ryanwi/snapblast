@@ -26,8 +26,8 @@ class LoginsController < ApplicationController
         format.html { redirect_to '/teams', notice: 'Login was successful.' }
         # format.json { render action: 'show', status: :created, location: @user }
       else
-        flash[:events] = [ ['login', 'failed'] ]
-        flash[:alert] = JSON.parse(response.body)["error"]
+        flash.now[:events] = [ ['login', 'failed'] ]
+        flash.now[:alert] = JSON.parse(response.body)["error"]
         format.html { render action: 'new' }
         # format.json { render json: @user.errors, status: :unprocessable_entity }
       end
