@@ -1,7 +1,7 @@
 Snapblast::Application.routes.draw do
-  resources :teams
-  resources :calls
-  resource :logins
+  resources :teams, only: [:index]
+  resources :calls, only: [:new, :create]
+  resource :logins, only: [:new, :create, :destroy]
 
   get '/login' => 'logins#new'
   get '/about' => 'welcome#about'

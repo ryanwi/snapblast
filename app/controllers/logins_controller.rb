@@ -1,11 +1,6 @@
 class LoginsController < ApplicationController
   force_ssl if: :ssl_configured?
 
-  # GET /logins
-  # GET /logins.json
-  def index
-  end
-
   # GET /logins/new
   # GET /logins/new.json
   def new
