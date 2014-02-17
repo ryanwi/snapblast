@@ -7,25 +7,33 @@ class LoginsController < ApplicationController
   end
 
   # POST /logins
-  # POST /logins.json
   def create
+    # sanity check
+    if params[:user].blank? || params[:password].blank?
+      flash.now[:alert] = 'Missing username or password'
+      render action: 'new' and return
+    end
+
+    # Login with TeamSnap client
     ts_client = TeamsnapClient.new
     response = ts_client.get("authentication", headers:
       { "X-Teamsnap-User" => params[:user], "X-Teamsnap-Password" => params[:password] })
 
-    respond_to do |format|
-      if response.status == 204
-        token = response.headers["x-teamsnap-token"]
-        session[:ts_token] = token
-        flash[:events] = [ ['login', 'success'] ]
-        format.html { redirect_to '/teams', notice: 'Login was successful.' }
-        # format.json { render action: 'show', status: :created, location: @user }
-      else
-        flash.now[:events] = [ ['login', 'failed'] ]
-        flash.now[:alert] = JSON.parse(response.body)["error"]
-        format.html { render action: 'new' }
-        # format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if response.status == 204
+      # Extract token from headers which will be used for subsequent requests
+      token = response.headers["x-teamsnap-token"]
+      session[:ts_token] = token
+
+      # Publish event to track logins
+      flash[:events] = [ ['login', 'success'] ]
+
+      redirect_to '/teams', notice: 'Login was successful.'
+    else
+      # Publish event to track login failures
+      flash.now[:events] = [ ['login', 'failed'] ]
+
+      flash.now[:alert] = JSON.parse(response.body)["error"]
+      render action: 'new'
     end
   end
 
