@@ -13,7 +13,7 @@
 
   <div style="margin-bottom:30px;">
     <h4><span class="label label-primary">1</span> Compose a message</h4>
-    <textarea class="form-control" name="message" rows="4">Hi, this is coach Smith, ...</textarea>
+    <textarea class="form-control" name="message" rows="4">Hello. This is a message from Coach Smith with your team, <%=  @team["team"]["team_name"] %>...</textarea>
   </div>
 
   <h4>
@@ -32,11 +32,9 @@
     <tbody>
       <% @team_rosters.each do |roster| %>
         <tr>
-          <td><%= roster["roster"]["first"] %> <%= roster["roster"]["last"] %></td>
+          <td class="<%= has_number(roster) %>"><%= roster["roster"]["first"] %> <%= roster["roster"]["last"] %></td>
           <td>
-              <% roster["roster"]["roster_telephone_numbers"].each do |phone| %>
-                  <%= phone["label"] %>: <%= phone["phone_number"] %> <br>
-              <% end %>
+            <%= format_numbers(roster) %>
            </td>
           <td></td>
         </tr>
