@@ -43,6 +43,11 @@ class CallsController < ApplicationController
       roster["roster"]["roster_telephone_numbers"].each do |phone|
         phone_numbers << phone["phone_number"] unless phone["phone_number"].nil?
       end
+      roster["contacts"].each do |contact|
+        contact["contact_telephone_numbers"].each do |phone|
+          phone_numbers << phone["phone_number"] unless phone["phone_number"].blank?
+        end
+      end
     end
 
     # Build message
