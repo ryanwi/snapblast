@@ -20,4 +20,10 @@ class ApplicationController < ActionController::Base
   def ssl_configured?
     Rails.env.production?
   end
+
+  # Setup TeamSnap client which is common for many controllers
+  def set_ts_client
+    @ts_client = TeamsnapClient.new(:auth_token => session[:ts_token])
+  end
+
 end
