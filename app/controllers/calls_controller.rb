@@ -38,6 +38,9 @@ class CallsController < ApplicationController
       end
     end
 
+    # Only take unique numbers
+    phone_numbers.uniq!
+
     # Build message
     message = URI.escape params[:message]
 
