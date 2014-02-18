@@ -80,7 +80,6 @@ class TeamsnapClient
   # Get Complete Roster information for the team
   #
   def team_rosters(team_id, as_roster_id)
-    # cache roster response and scope it to the user's session
     team_rosters_resource = "teams/#{team_id}/as_roster/#{as_roster_id}/rosters"
     team_rosters_key = "#{@auth_token}_#{team_rosters_resource}"
     team_rosters = Rails.cache.fetch team_rosters_key, :expires_in => 10.minutes do

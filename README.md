@@ -18,7 +18,7 @@ This is primarily a personal development project, but feel free to use.
 
 - Login with your TeamSnap credentials
 - Choose one of your teams to call
-- Write a message and send it, it will be converted to voice and all players will be a call
+- Write a message and send it, it will be converted to voice and all players will get a call
 
 ## Built With
 
