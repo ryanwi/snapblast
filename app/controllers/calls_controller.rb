@@ -8,7 +8,6 @@ class CallsController < ApplicationController
     @team_id = params[:id]
 
     # Get Team information
-    # cache team response and scope it to the user's session
     @team = @ts_client.team(@team_id)
 
     # Determine roster_id to use

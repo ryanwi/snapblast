@@ -6,7 +6,6 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     # Get a list of teams for the user from the TeamSnap API
-    # cache response and scope it to the user's session
     @teams = @ts_client.teams
   end
 
