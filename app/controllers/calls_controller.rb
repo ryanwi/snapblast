@@ -22,29 +22,15 @@ class CallsController < ApplicationController
     team_id = params[:team_id]
     roster_id = params[:roster_id]
 
-    # collect phone numbers from team roster
+    # collect phone numbers from team
     team_rosters = @ts_client.team_rosters(team_id, roster_id)
-    # TODO: move this block to isolated component for easier testing
-    phone_numbers = []
-    team_rosters.each do |roster|
-      roster["roster"]["roster_telephone_numbers"].each do |phone|
-        phone_numbers << phone["phone_number"] unless phone["phone_number"].blank?
-      end
-      roster["roster"]["contacts"].each do |contact|
-        contact["contact_telephone_numbers"].each do |phone|
-          phone_numbers << phone["phone_number"] unless phone["phone_number"].blank?
-        end
-      end
-    end
-
-    # Only take unique numbers
-    phone_numbers.uniq!
+    phone_numbers = TeamPhoneNumberCollector.collect(team_rosters)
 
     # Build message
     message = URI.escape params[:message]
 
     # Make the calls
-    # TODO: queue calls with Resque/DelayedJob
+    # TODO: queue calls with Resque/DelayedJob/sikekiq
     # TODO: log the calls to the database
     twilio = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
     phone_numbers.each do |phone_number|

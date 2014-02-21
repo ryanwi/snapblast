@@ -25,7 +25,7 @@
             {
                "id":2,
                "label":"",
-               "email":"player2@teamsnap.com",
+               "email":"player2@example.com",
                "receive_team_emails":true,
                "hide":false
             }
@@ -40,8 +40,86 @@
             "zip":"",
             "country":null
          },
-         "contacts":[
-         ]
+      "contacts": [
+        {
+          "id": 1,
+          "roster_id": 1,
+          "label": "Mother",
+          "first": "Jane",
+          "last": "Doe",
+          "user_id": null,
+          "position": null,
+          "contact_email_addresses": [
+            {
+              "id": 1,
+              "label": "Parent 1",
+              "email": "mom@example.com",
+              "receive_team_emails": false,
+              "hide": false
+            }
+          ],
+          "contact_telephone_numbers": [
+            {
+              "id": 1,
+              "label": "work",
+              "phone_number": "555-123-4567",
+              "preferred": false,
+              "enable_sms": false,
+              "sms_carrier": "",
+              "hide": false
+            },
+            {
+              "id": 1,
+              "label": "cell",
+              "phone_number": "555-234-5678",
+              "preferred": false,
+              "enable_sms": true,
+              "sms_carrier": "at&t",
+              "hide": false
+            }
+          ],
+          "address": { "address": "", "address2": null, "city": "", "state": "", "zip": "", "country": null }
+        },
+        {
+          "id": 1,
+          "roster_id": 1,
+          "label": "Father",
+          "first": "John ",
+          "last": "Doe",
+          "user_id": 1,
+          "position": null,
+          "contact_email_addresses": [
+            {
+              "id": 1,
+              "label": "Parent 2",
+              "email": "dad@example.com",
+              "receive_team_emails": true,
+              "hide": false
+            }
+          ],
+          "contact_telephone_numbers": [
+            {
+              "id": 1,
+              "label": "work",
+              "phone_number": "555-345-6789",
+              "preferred": false,
+              "enable_sms": false,
+              "sms_carrier": "",
+              "hide": false
+            },
+            {
+              "id": 1,
+              "label": "cell",
+              "phone_number": "555-456-7890",
+              "preferred": false,
+              "enable_sms": true,
+              "sms_carrier": "at&t",
+              "hide": false
+            }
+          ],
+          "address": { "address": "", "address2": null, "city": "", "state": "", "zip": "", "country": null }
+        }
+      ]
       }
    },
    {
